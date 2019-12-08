@@ -2,6 +2,7 @@
   "name": "react",
   "version": "0.0.0",
   "private": true,
+  "homepage": "http://gitname.github.io/ui-core-invoice",
   "dependencies": {
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
