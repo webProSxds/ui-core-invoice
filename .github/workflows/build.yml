@@ -1,0 +1,25 @@
+name: MasterDeployCI
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [10.x]
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Install Packages
+      run: npm install
+    - name: Deploy to GH Pages
+      run: |
+        git config --global user.email "guntupallikoteswararao2016@gmail.com>"
+        git config --global user.name "guntupallikoteswararao2016>"
+        git remote set-url origin "https://0497d1633dc065b8287b6615749e114e5a307d56+@github.com/guntupallikoteswararao2016+https://github.com/webProSxds/ui-core-invoice.git"
+        npm run deploy
