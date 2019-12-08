@@ -19,7 +19,7 @@ jobs:
       run: npm install
     - name: Deploy to G H Pages
       run: |
-        git config --global user.email "guntupallikoteswararao2016@gmail.com>"
-        git config --global user.name "guntupallikoteswararao2016>"
+        git config --global user.email "guntupallikoteswararao2016@gmail.com"
+        git config --global user.name "guntupallikoteswararao2016"
         git remote set-url origin "https://github.com/webProSxds/ui-core-invoice.git"
         npm run deploy
