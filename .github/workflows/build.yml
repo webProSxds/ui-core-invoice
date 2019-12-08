@@ -17,9 +17,9 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: Install Packages
       run: npm install
-    - name: Deploy to GH Pages
+    - name: Deploy to G H Pages
       run: |
         git config --global user.email "guntupallikoteswararao2016@gmail.com>"
         git config --global user.name "guntupallikoteswararao2016>"
-        git remote set-url origin "https://0497d1633dc065b8287b6615749e114e5a307d56+https://github.com/webProSxds/ui-core-invoice.git"
+        git remote set-url origin "https://github.com/webProSxds/ui-core-invoice.git"
         npm run deploy
