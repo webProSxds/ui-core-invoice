@@ -8,6 +8,7 @@ import Welcome from './welcome';
 const App = () =>
     <div>
         Welcome hello world {React.version}
+        <p>Good well done Ms</p>
         <Add num1 = {25} num2 = {56}/>
         <Welcome />
     </div>
