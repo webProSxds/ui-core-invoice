@@ -13,9 +13,9 @@ jobs:
     - name: Build
       run: |
         npm install
-        npm run-script build
+        npm run-script deploy
     - name: Deploy
-      uses: webProSxds/ui-core-invoice@releases/v1
+      uses: ui-core-invoice@releases/v1
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: gh-pages
