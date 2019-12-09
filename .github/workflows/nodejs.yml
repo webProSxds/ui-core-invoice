@@ -16,7 +16,7 @@ jobs:
         npm run-script build
 
     - name: Deploy
-      uses: http://webprosxds.github.io/ui-core-invoice@releases/v3
+      uses: http://webprosxds.github.io/ui-core-invoice
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: gh-pages
