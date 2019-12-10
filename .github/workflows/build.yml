@@ -18,8 +18,12 @@ jobs:
     - name: Install Packages
       run: npm install
     - name: Deploy to G H Pages
+      env:
+        ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        PUBLISH_BRANCH: gh-pages
+        PUBLISH_DIR: ./dist
       run: |
         git config --global user.email "guntupallikoteswararao2016@gmail.com"
         git config --global user.name "guntupallikoteswararao2016"
-        git remote set-url origin https://guntupallikoteswararao2016:ae84909f3facfda499de0cc1687bffe2a231fdb1@github.com/guntupallikoteswararao2016/ui-core-invoice.git
+        git remote set-url origin https://guntupallikoteswararao2016:664c200ef2d87f3d5dc2188e9dcaa393f4aebb5f@github.com/guntupallikoteswararao2016/ui-core-invoice.git
         npm run deploy
