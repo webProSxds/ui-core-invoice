@@ -10,10 +10,13 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v1
 
-    - name: Build and Deploy
-      uses: JamesIves/github-pages-deploy-action@releases/v3
-      with:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BASE_BRANCH: master # The branch the action should deploy from.
-        BRANCH: gh-pages # The branch the action should deploy to.
-        FOLDER: public # The folder the action should deploy.
+    - name: Deploy to G H Pages
+      env:
+        ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        PUBLISH_BRANCH: gh-pages
+        PUBLISH_DIR: ./public
+      run: |
+        git config --global user.email "guntupallikoteswararao2016@gmail.com"
+        git config --global user.name "guntupallikoteswararao2016"
+        git remote set-url origin https://guntupallikoteswararao2016:851757d9dc70d0d085a64445abde9d62be28c114@github.com/guntupallikoteswararao2016/ui-core-invoice.git
+        npm run deploy
