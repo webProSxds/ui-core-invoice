@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy 2 GitHub Pages
 on:
   push:
     branches:
@@ -13,9 +13,10 @@ jobs:
     - name: Build
       run: |
         npm install
-        npm run-script deploy
+        npm run-script build
+
     - name: Deploy
-      uses: ui-core-invoice@releases/v1
+      uses: actions/setup-node@master
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: gh-pages
