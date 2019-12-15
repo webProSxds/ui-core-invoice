@@ -7,6 +7,7 @@ function initFontAwesome() {
   library.add(faLink);
   library.add(faUser);
   library.add(faPowerOff);
+  library.add(faHome);
 }
 
 export default initFontAwesome;
