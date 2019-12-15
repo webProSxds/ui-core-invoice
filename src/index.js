@@ -3,38 +3,40 @@ import React from 'react';
 import { render } from 'react-dom';
 import './style.css';
 import initFontAwesome from "./utils/initFontAwesome";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, NavLink } from "react-router-dom";
 import Home from './home';
 import About from './about';
 import Users from './users';
 initFontAwesome();
 
+const Nav = () => {
 
+  return (
+    <nav className="navbar">
+      <NavLink
+        exact
+        activeClassName="navbar_link--active"
+        className="navbar_link"
+        to="/">Home</NavLink>
+      <NavLink
+        activeClassName="navbar_link--active"
+        className="navbar_link"
+        to="/about">About</NavLink>
+      <NavLink
+        activeClassName="navbar_link--active"
+        className="navbar_link"
+        to="/users">Users</NavLink>
+    </nav>
+  )
+}
 
 const Header = () => {
 
-  return (<div>
-    <div class="header">
+  return (
+    <header className="header">
       <h2>Scroll Down</h2>
       <p>Scroll down to see the sticky effect.</p>
-    </div>
-
-    <div id="navbar">
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/users">Users</Link>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </div>)
+    </header>)
 }
 
 const UiRoute = () => {
@@ -43,6 +45,7 @@ const UiRoute = () => {
     <Router>
       <div>
         <Header />
+        <Nav />
         <Switch>
           <Route path="/about">
             <About />
@@ -63,10 +66,9 @@ class App extends React.Component {
 
   componentDidMount() {
 
-    console.log("yes");
     window.onscroll = function () { myFunction() };
 
-    var navbar = document.getElementById("navbar");
+    var navbar = document.querySelector('nav');
     var sticky = navbar.offsetTop;
 
     function myFunction() {
