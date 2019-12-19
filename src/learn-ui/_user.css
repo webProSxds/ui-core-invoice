@@ -1,0 +1,17 @@
+.button{
+    border:1px solid black;
+    width: 150px;
+    padding: 25px;
+    cursor: pointer;
+    text-align: center;
+    background-color: cadetblue;
+    border-radius: 2%;
+
+}
+
+.in{
+    color: chartreuse;
+}
+.out{
+    color: darkgoldenrod;
+}
