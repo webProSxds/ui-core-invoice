@@ -1,0 +1,13 @@
+.regions-box , .local-items{
+
+    border-top:1px solid gray;
+    margin-top: 25px;
+    width: 750px;;
+}
+
+.regions-items{
+    margin: 50px;
+    display: inline-flex;
+    flex-flow: row;   
+
+}

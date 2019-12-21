@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import Apple from './learn-ui/project-apple';
 
 const initData = {
 	items: [
@@ -61,6 +61,8 @@ export default () => {
 			{
 				<button onClick={()=>clickCapitaHandler()}>Capital</button>
 			}
+
+			<Apple />
 		</div>
 	);
 }

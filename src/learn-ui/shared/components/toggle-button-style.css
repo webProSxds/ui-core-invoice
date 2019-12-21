@@ -1,0 +1,9 @@
+.btn-selected{
+    color: chartreuse;
+    background-color: gray;
+}
+.btn-default{
+    color: black;
+    background-color:white;
+
+}
