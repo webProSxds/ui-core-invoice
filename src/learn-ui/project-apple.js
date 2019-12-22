@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import CheckboxLabled from './shared/components/check-box-labled';
 import './style.css'
 import ToggleButton from './shared/components/toogle-button';
@@ -37,14 +37,30 @@ const data_apple_tv = {
     }
 }
 
+
 export default () => {
     const [regionList, updateRegionList] = useState({
         selectedRegions: []
     });
 
-    const changeCategoryHandler = () => {
+    const [products, updateProductsList] = useState({
+        selectedProduct: [],
+        product: [
+            { name: "AppleTv", cid: 4142 },
+            { name: "maps", cid: 4142 }
+        ],
+        allRegions: [],
+        selectedRegions: [],
+        regions: []
+    });
 
-        console.log('changeCategoryHandler')
+
+    const changeCategoryHandler = (item) => {
+
+        console.log('changeCategoryHandler', item.name);
+
+        const keys = Object.keys(data_apple_tv.region);
+        updateProductsList({ ...products, selectedProduct: [...products.selectedProduct, item], allRegions: [...products.allRegions, ...keys] });
 
     }
 
@@ -52,31 +68,42 @@ export default () => {
 
         console.log('clickRegionSelectHandler', item, iselectedRegion);
 
+        let data;
+
         if (!iselectedRegion) {
-            
-            let x= regionList.selectedRegions.filter( a => a !=item)
-            
-            updateRegionList({ ...regionList, selectedRegions: [...x] })
 
-        }else{
+            data = regionList.selectedRegions.filter(a => a != item);
 
-            updateRegionList({ ...regionList, selectedRegions: [...regionList.selectedRegions, item] })
+        } else {
+
+            data = [...regionList.selectedRegions, item];
+
         }
+
+        updateRegionList({ ...regionList, selectedRegions: data })
+
 
     }
 
-    const keys = Object.keys(data_apple_tv.region);
+
 
     return (
         <div>
 
-            <CheckboxLabled lable="Apple TV" changeHandler={changeCategoryHandler} />
+            {
+                products.product.map(item =>
+                    <CheckboxLabled
+                        lable={item.name}
+                        changeHandler={() => changeCategoryHandler(item)}
+                    />)
+            }
+
 
             <div className="regions-box">
 
                 <div className="regions-items">
                     {
-                        keys.map(item =>
+                        products.allRegions.map(item =>
                             <ToggleButton
                                 lable={` ${item} (${data_apple_tv.region[item]})`}
                                 clickHandler={(iselectedRegion) => clickRegionSelectHandler(item, iselectedRegion)}
@@ -85,15 +112,12 @@ export default () => {
                     }
                 </div>
 
+            </div>
+            <div className="local-items">
 
-                <div className="local-items">
-
-                    {<pre>{JSON.stringify(regionList, null, 3)}</pre>}
-
-                </div>
+                {<pre>{JSON.stringify(products, null, 3)}</pre>}
 
             </div>
-
         </div>
     )
 }
