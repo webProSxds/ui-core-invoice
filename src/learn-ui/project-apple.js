@@ -115,7 +115,7 @@ export default () => {
             </div>
             <div className="local-items">
 
-                {<pre>{JSON.stringify(products, null, 3)}</pre>}
+                {/* {<pre>{JSON.stringify(products, null, 3)}</pre>} */}
 
             </div>
         </div>
