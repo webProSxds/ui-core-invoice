@@ -1,69 +1,43 @@
-import React, { useState } from 'react';
-import Animals from './Animals/animals'
+import React, { useState, useRef, useEffect } from 'react';
 
-const initData = {
-	items: [
-		{ name: 'sivas', id: 1 },
-		{ name: 'Manasasiva', id: 2 },
-		{ name: 'sankar', id: 3 },
-	],
-	selecteItem: ''
+const state = {
+	todoList: []
 }
+
+let nextTodoId = 0
+
 export default () => {
-	const [data, updateData] = useState(initData);
 
-	const updateHandler = (a) => {
-		updateData({ ...data, selecteItem: a })
-	}
+	const [list, updateList] = useState(state);
+	const inputRef = useRef(null);
 
-	const clickCapitaHandler = () => {
-		console.log("clickCapitaHandler", data.selecteItem);
-
-		let ns = data.selecteItem.name.toUpperCase();
-
-
-
-
-		//fetch the record from data
-
-
-		data.items.map(item => {
-			if (item.id == data.selecteItem.id) {
-				item.name = item.name.toUpperCase();
-
-				return item;
-			}
-			return item;
-		});
-
-
-		updateData({ ...data, selecteItem: { ...data.selecteItem, name: ns } });
-
-
-	}
-
-
+	useEffect(() => {
+		inputRef.current.focus();
+	}, [inputRef])
 
 	return (
-		<div className="content">
-			{/* {
-				<pre>{JSON.stringify(data, null, 2)}</pre>
-			} */}
-			{/* {
-				data.items.map(
-					(item, id) =>
-						<div className="box" onClick={() => updateHandler(item)}>
-							{item.name}
-						</div>
-				)
-			} */}
+		<div>
+			{
+				// <pre>{JSON.stringify(list, null, 2)}</pre>
 
-			{/* {
-				<button onClick={() => clickCapitaHandler()}>Capital</button>
-			} */}
-
-
-			<Animals />
+			}
+			<form onSubmit={
+				(event) => {
+					event.preventDefault();
+					const { value } = inputRef.current;
+					console.log("submit", inputRef.current.value);
+					updateList({
+						...list,
+						todoList: [...list.todoList, { value, id: nextTodoId++ }]
+					});
+					inputRef.current.value = '';
+				}
+			}>
+				<input type="text" ref={inputRef} />
+			</form>
+			{
+				list.todoList.map(({ value }) => <p>{value}</p>)
+			}
 		</div>
 	);
 }
