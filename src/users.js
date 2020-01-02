@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import Family from './family/family';
-import Apple from './learn-ui/project-apple';
-
+import Animals from './Animals/animals'
 
 const initData = {
 	items: [
@@ -51,21 +49,21 @@ export default () => {
 			{/* {
 				<pre>{JSON.stringify(data, null, 2)}</pre>
 			} */}
-			{
+			{/* {
 				data.items.map(
 					(item, id) =>
 						<div className="box" onClick={() => updateHandler(item)}>
 							{item.name}
 						</div>
 				)
-			}
+			} */}
 
-			{
+			{/* {
 				<button onClick={() => clickCapitaHandler()}>Capital</button>
-			}
+			} */}
 
-			<Apple />
-			<Family />
+
+			<Animals />
 		</div>
 	);
 }
