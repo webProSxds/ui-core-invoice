@@ -1,4 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
+import Animals from './Animals/animals';
+
+
 
 const state = {
 	todoList: []
@@ -11,9 +14,9 @@ export default () => {
 	const [list, updateList] = useState(state);
 	const inputRef = useRef(null);
 
-	useEffect(() => {
-		inputRef.current.focus();
-	}, [inputRef])
+	// useEffect(() => {
+	// 	inputRef.current.focus();
+	// }, [inputRef])
 
 	return (
 		<div>
@@ -33,11 +36,12 @@ export default () => {
 					inputRef.current.value = '';
 				}
 			}>
-				<input type="text" ref={inputRef} />
+				{/* <input type="text" ref={inputRef} /> */}
 			</form>
 			{
 				list.todoList.map(({ value }) => <p>{value}</p>)
 			}
+			<Animals />
 		</div>
 	);
 }

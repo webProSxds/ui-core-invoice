@@ -1,33 +1,49 @@
 import React, { useState, useEffect } from 'react';
 import Button from './Button';
 import Selector from './selector';
+import fetch from '../utils/fetch_data'
 import './button.css'
 
-const animalList = ["All", "wild", "pet", "water"];
-const animals = [{ name: "tiger", category: "wild" },
-{ name: "lion", category: "wild" },
-{ name: "dog", category: "pet" },
-{ name: "cat", category: "pet" },
-{ name: "fish", category: "water" },
-{ name: "snake", category: "water" }]
-const animalsData = {
-    selectedCategory: "All",
-    animals
+const state = {
+    selectedCategory: '',
+    animals: [],
+    animalList: []
 }
 
+
+const basePath = 'https://my-json-server.typicode.com/guntupallikoteswararao2016/demo/'
+
 export default () => {
-    const [data, updatedataa] = useState(animalsData);
+    const [data, updatedataa] = useState(state);
 
 
     const clickHandler = (animalItem) => {
-        //console.log("clickHandler", animalItem, iss);
-        updatedataa({ ...data, selectedCategory: animalItem })
+
+        updatedataa({ ...data, selectedCategory: animalItem });
+
     }
 
+    useEffect(async () => {
+
+        const data = await fetch(`${basePath}/animalList`),
+            animalList = await data.json();
+
+        const dataAnimals = await fetch(`${basePath}/animals`),
+            animals = await dataAnimals.json();
+
+        updatedataa({
+            ...data,
+            animalList,
+            animals,
+            selectedCategory: 'wild'
+        })
+
+    }, [])
+
     return (<div>
-        {<pre>{JSON.stringify(data.selectedCategory, null, 2)}</pre>}
+        {/* {<pre>{JSON.stringify(data.selectedCategory, null, 2)}</pre>} */}
         {
-            animalList.map((item) =>
+            data.animalList.map((item) =>
                 <Button
                     selected={data.selectedCategory === item}
                     label={item}
@@ -36,9 +52,12 @@ export default () => {
 
             )
         }
+
         <Selector
-            animalpropsList={data.selectedCategory === "All" ? animals : animals.filter((item) => item.category == data.selectedCategory)}
+            animalpropsList={data.selectedCategory === "All" ? data.animals :
+                data.animals.filter((item) => item.category == data.selectedCategory)}
 
         />
+
     </div>)
 }

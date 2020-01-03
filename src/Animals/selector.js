@@ -1,8 +1,7 @@
 import React from 'react';
 
 export default ({ animalpropsList }) => {
-
-    return (
+    return animalpropsList.length ? (
         <select>
 
             {
@@ -13,5 +12,5 @@ export default ({ animalpropsList }) => {
             }
 
         </select>
-    )
+    ) : null
 }
