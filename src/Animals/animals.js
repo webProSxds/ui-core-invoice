@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Button from './Button';
 import Selector from './selector';
 import fetch from '../utils/fetch_data'
+import AnimalPract from '../practice.js/animalPract'
 import './button.css'
 
 const state = {
@@ -42,7 +43,7 @@ export default () => {
 
     return (<div>
         {/* {<pre>{JSON.stringify(data.selectedCategory, null, 2)}</pre>} */}
-        {
+        {/* {
             data.animalList.map((item) =>
                 <Button
                     selected={data.selectedCategory === item}
@@ -57,7 +58,8 @@ export default () => {
             animalpropsList={data.selectedCategory === "All" ? data.animals :
                 data.animals.filter((item) => item.category == data.selectedCategory)}
 
-        />
+        /> */}
+        <AnimalPract />
 
     </div>)
 }

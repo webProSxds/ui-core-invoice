@@ -6,3 +6,11 @@ build
 
 #ignore package-lock.json
 package-lock.json
+
+#learn ignore folder
+src/practice
+
+A
+B
+
+
