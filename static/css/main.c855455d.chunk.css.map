@@ -1,1 +1,0 @@
-{"version":3,"sources":["style.css"],"names":[],"mappings":"AAAA,KACE,gBACF,CACA,KACE,SAAS,CACT,oBACF,CACA,OACE,WACF","file":"main.c855455d.chunk.css","sourcesContent":["h1, p {\n  font-family: Lato;\n}\n.red{\n  color:Red;\n  border:1px solid red;\n}\n.green{\n  color:green;\n}"]}
