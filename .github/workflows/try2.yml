@@ -1,0 +1,24 @@
+name: Deploy 2 GitHub Pages try2
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@master
+
+    - name: Build
+      run: |
+        npm install
+        npm run-script build
+
+    - name: Deploy
+      uses: s0/git-publish-subdir-action@master
+      with:
+        REPO: self
+        BRANCH: gh-pages
+        FOLDER: public/site
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
