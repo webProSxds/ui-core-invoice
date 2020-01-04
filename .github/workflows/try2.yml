@@ -18,7 +18,7 @@ jobs:
     - name: Deploy
       uses: s0/git-publish-subdir-action@master
       with:
-        REPO: self
+        REPO: git@github.com:webProSxds/ui-core-invoice.git
         BRANCH: gh-pages
         FOLDER: public/site
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
