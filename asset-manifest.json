@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/ui-core-invoice/static/css/main.6c4b29fa.chunk.css",
-    "main.js": "/ui-core-invoice/static/js/main.21145c5b.chunk.js",
+    "main.css": "/ui-core-invoice/static/css/main.b70480c8.chunk.css",
+    "main.js": "/ui-core-invoice/static/js/main.5b780fed.chunk.js",
     "runtime-main.js": "/ui-core-invoice/static/js/runtime-main.7f7fc954.js",
-    "static/js/2.17f7dd48.chunk.js": "/ui-core-invoice/static/js/2.17f7dd48.chunk.js",
+    "static/js/2.e2c31420.chunk.js": "/ui-core-invoice/static/js/2.e2c31420.chunk.js",
     "index.html": "/ui-core-invoice/index.html",
-    "precache-manifest.3980df5cb87bf22c7c6aefe8adaf5b1e.js": "/ui-core-invoice/precache-manifest.3980df5cb87bf22c7c6aefe8adaf5b1e.js",
+    "precache-manifest.4b248a7fb00c87731f756c03ae061eab.js": "/ui-core-invoice/precache-manifest.4b248a7fb00c87731f756c03ae061eab.js",
     "service-worker.js": "/ui-core-invoice/service-worker.js",
-    "static/js/2.17f7dd48.chunk.js.LICENSE": "/ui-core-invoice/static/js/2.17f7dd48.chunk.js.LICENSE"
+    "static/js/2.e2c31420.chunk.js.LICENSE": "/ui-core-invoice/static/js/2.e2c31420.chunk.js.LICENSE"
   },
   "entrypoints": [
     "static/js/runtime-main.7f7fc954.js",
-    "static/js/2.17f7dd48.chunk.js",
-    "static/css/main.6c4b29fa.chunk.css",
-    "static/js/main.21145c5b.chunk.js"
+    "static/js/2.e2c31420.chunk.js",
+    "static/css/main.b70480c8.chunk.css",
+    "static/js/main.5b780fed.chunk.js"
   ]
 }
