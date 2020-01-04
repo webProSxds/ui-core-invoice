@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Animals from './Animals/animals'
-
+import { faHome } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const initData = {
 	items: [
 		{ name: 'sivas', id: 1 },
@@ -63,6 +64,9 @@ export default () => {
 			} */}
 
 
+			<div>
+				<FontAwesomeIcon icon={faHome} />
+			</div>
 			<Animals />
 		</div>
 	);
