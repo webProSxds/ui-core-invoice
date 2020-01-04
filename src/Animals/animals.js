@@ -41,7 +41,7 @@ export default () => {
     }, [])
 
     return (<div>
-        {/* {<pre>{JSON.stringify(data.selectedCategory, null, 2)}</pre>} */}
+        {<pre>{JSON.stringify(data.selectedCategory, null, 2)}</pre>}
         {
             data.animalList.map((item) =>
                 <Button
