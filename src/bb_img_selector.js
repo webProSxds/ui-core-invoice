@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-
 const initalData = {
 	imagesList: [
 		{ name: 'ionon', path: 'https://www.bigbasket.com/media/uploads/p/s/10000148_28-fresho-onion.jpg' },
