@@ -1,4 +1,4 @@
-"build": "GENERATE_SOURCEMAP=false react-scripts build && gh-pages -d build",{
+{
   "name": "Invoice",
   "version": "0.0.0",
   "private": true,
@@ -15,7 +15,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "GENERATE_SOURCEMAP=false react-scripts build && gh-pages -d build",
+    "build": "GENERATE_SOURCEMAP=false react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
