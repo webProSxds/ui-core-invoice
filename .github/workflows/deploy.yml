@@ -12,5 +12,6 @@ jobs:
 
     - name: Build
       run: |
+        git checkout master
         npm install
         npm deploy
