@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import Animals from './Animals/animals'
-import { faHome } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Family from './family/family';
+import UserNotifications from './user-notifications/index'
 
 const initData = {
 	items: [
@@ -66,11 +65,10 @@ export default () => {
 			} */}
 
 
-			<div>
-				<FontAwesomeIcon icon={faHome} />
-			</div>
-			<Animals />
-			<Family />
+
+			{/* <Animals />
+			<Family /> */}
+			<UserNotifications />
 		</div>
 	);
 }

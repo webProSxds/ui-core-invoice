@@ -1,0 +1,14 @@
+$color-red:red;
+
+.app{
+    color: $color-red;
+    cursor: pointer;
+}
+.child{
+    display:inline-flex ;
+    padding-right: 20px;
+    padding: 20px;
+}
+.icon-selected{
+    opacity: 0.2;
+}
