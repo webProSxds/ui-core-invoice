@@ -1,4 +1,4 @@
-name: Deploy 2 GitHub Pages
+name: Deploy
 on:
   push:
     branches:
@@ -9,7 +9,15 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v1
-    name: test-cases
-        run:|
+
+    - name: Build
+      run: |
         npm install
-        npm run-script test
+        npm run-script build
+
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v2
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: ./dist
