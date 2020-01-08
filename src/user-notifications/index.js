@@ -1,20 +1,16 @@
 import React, { useState } from 'react';
 import '../user-notifications/app.scss'
-import { faVolumeMute, faBookmark, faCircle } from "@fortawesome/free-solid-svg-icons";
+import { faVolumeMute, faBookmark, faCircle, faAddressBook, faVolumeUp, faHamburger } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import 'example_npm_invoice_styles/lib/_notification.scss';
 import 'example_npm_invoice_styles/lib/_buttons.scss';
 
-const composeClass = (isOpacity) => {
-
-    return isOpacity ? 'child icon-selected' : 'child';
-}
 const initialState = {
     iconList: [
-        { icon: faCircle, isSlected: false },
-        { icon: faVolumeMute, isSlected: false },
-        { icon: faBookmark, isSlected: false }
-    ],
+        { icon_default: faCircle, icon_selected: faAddressBook, isSlected: false },
+        { icon_default: faVolumeMute, icon_selected: faVolumeUp, isSlected: false },
+        { icon_default: faBookmark, icon_selected: faHamburger, isSlected: false }
+    ]
 };
 export default () => {
 
@@ -41,8 +37,9 @@ export default () => {
             {
                 data.iconList.map(
                     item =>
-                        <div className={`${composeClass(item.isSlected)}`}
-                            onClick={() => clickCircle(item)}><FontAwesomeIcon icon={item.icon} />
+                        <div className="child"
+                            onClick={() => clickCircle(item)}>
+                            <FontAwesomeIcon icon={item.isSlected ? item.icon_selected : item.icon_default} />
                         </div>
 
                 )
