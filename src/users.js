@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import Animals from './Animals/animals'
 import Family from './family/family';
-import UserNotifications from './user-notifications/index'
+import UserNotifications from './user-notifications/index';
+import Practice from './practice';
 
 const initData = {
 	items: [
@@ -66,9 +67,14 @@ export default () => {
 
 
 
-			{/* <Animals />
-			<Family /> */}
-			<UserNotifications />
+			{
+				/*
+				 <Animals />
+				<Family />
+				<UserNotifications />
+				*/
+			}
+			<Practice.UseReduce />
 		</div>
 	);
 }
