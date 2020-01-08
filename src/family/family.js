@@ -11,49 +11,22 @@ const state = {
 
 }
 
-const familyData = {
-    myFamily: [
-        { name: "siva", age: 36, parent: "myFamily" },
-        { name: "manasa", age: 27, parent: "myFamily" },
-        { name: "Rohith", age: 2, parent: "myFamily" },
-        { name: "pranavi", age: 6, parent: "myFamily" },
-    ],
-    parents: [
-        { name: "kumari", age: 50, parent: "parents" },
-        { name: "srinu", age: 57, parent: "parents" },
-    ],
-    in_laws: [
-        { name: "koteswarao", age: 67, parent: "in_laws" },
-        { name: "kalyani", age: 57, parent: "in_laws" },
-    ],
-    sister: [
-        { name: "sankar", age: 45, parent: "sister" },
-        { name: "madhuri", age: 30, parent: "sister" },
-        { name: "revathi", age: 11, parent: "sister" },
-        { name: "karthik", age: 5, parent: "sister" },
-    ],
-    friends: [
-        { name: "durga", age: 45 }
-
-    ],
-    selected_checkBox: [],
-    seletedItems: {}
-
-
-}
-
-
 export default () => {
 
     let filterFamilyList;
     const [data, updateData] = useState(state);
 
-    useEffect(async () => {
+    useEffect(() => {
 
-        const datas = await fetch('https://my-json-server.typicode.com/guntupallikoteswararao2016/demo/family');
-        const family = await datas.json();
+        const init = async () => {
+            const datas = await fetch('https://my-json-server.typicode.com/guntupallikoteswararao2016/demo/family');
+            const family = await datas.json();
 
-        updateData({ ...data, family });
+            updateData({ ...data, family });
+        }
+
+        init();
+
 
     }, [])
 

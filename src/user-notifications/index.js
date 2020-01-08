@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import '../user-notifications/app.scss'
 import { faVolumeMute, faBookmark, faCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import 'example_npm_invoice_styles/lib/_notification.scss';
+import 'example_npm_invoice_styles/lib/_buttons.scss';
 
 const composeClass = (isOpacity) => {
 
@@ -45,6 +47,9 @@ export default () => {
 
                 )
             }
+            <p className="test">manasa</p>
+            <p className="text_color">Siva</p>
+            <p className="btn">Buton</p>
 
         </div>)
 }
