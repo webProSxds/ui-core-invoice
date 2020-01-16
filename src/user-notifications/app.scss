@@ -12,3 +12,21 @@ $color-red:red;
 .icon-selected{
     opacity: 0.2;
 }
+.container{
+    background-color: grey;
+    >.add-icon-container{
+        color: red;
+        width: 100px;
+    }
+}
+.cross{
+    display: inline;
+}
+.modelVeiw{
+    width: 100px;
+    background-color: powderblue
+}
+.header{
+    display:inline-flex ;
+
+}

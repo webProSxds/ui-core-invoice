@@ -3,6 +3,7 @@ import Animals from './Animals/animals'
 import Family from './family/family';
 import UserNotifications from './user-notifications/index';
 import Practice from './practice';
+import ModelUi from './model_ui/model_ui'
 
 const initData = {
 	items: [
@@ -72,9 +73,10 @@ export default () => {
 				 <Animals />
 				<Family />
 				<UserNotifications />
+				<Practice.UseReduce />
 				*/
 			}
-			<Practice.UseReduce />
+			<ModelUi />
 		</div>
 	);
 }
