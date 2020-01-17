@@ -4,6 +4,8 @@ import Family from './family/family';
 import UserNotifications from './user-notifications/index';
 import Practice from './practice';
 import ModelUi from './model_ui/model_ui'
+import GmailIcons from '../src/gmail_icons/index'
+import ReactChild from '../src/react-children/index'
 
 const initData = {
 	items: [
@@ -74,9 +76,11 @@ export default () => {
 				<Family />
 				<UserNotifications />
 				<Practice.UseReduce />
+				<ModelUi />
+				<GmailIcons.Icons />
 				*/
 			}
-			<ModelUi />
+			<ReactChild />
 		</div>
 	);
 }
