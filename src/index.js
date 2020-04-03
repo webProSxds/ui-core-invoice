@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 import './style.css';
 
 
-const App = () => <div>Welcome {React.version}</div>
+const App = () => <div>Welcome </div>
 
-
+console.log('hello')
 render(<App />, document.getElementById('root'));
