@@ -1,7 +1,7 @@
 # ui-core-invoice
 
 ## Installation
-****
+****thanks
 - npm i
 
 ## Start App
